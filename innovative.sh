@@ -235,16 +235,16 @@ echo "$(date '+%D %T' | toilet -f term -F border --gay)";
 echo "-------------------------------";
 echo "-*-*-*-*-* MAIN MENU *-*-*-*-*- ";
 echo "-------------------------------";
-echo "1  - INFORMATION ABOUT PRODUCTS"| pv -qL 40;
-echo "2  - ENTER PURCHASE RECORDS"| pv -qL 40;
-echo "3  - UPDATE PURCHASED RECORDS"| pv -qL 40;
-echo "4  - SEARCH FOR RECORDS"| pv -qL 40;
-echo "5  - DELETE RECORDS FROM STORE DATABASE"| pv -qL 40;
-echo "6  - VIEW SALES AND PURCHASE REPORT"| pv -qL 40;
-echo "7  - GENERATE PIE GRAPH"| pv -qL 40;
-echo "E  - EXIT"| pv -qL 40;
+echo "1  - INFORMATION ABOUT PRODUCTS";
+echo "2  - ENTER PURCHASE RECORDS";
+echo "3  - UPDATE PURCHASED RECORDS";
+echo "4  - SEARCH FOR RECORDS";
+echo "5  - DELETE RECORDS FROM STORE DATABASE";
+echo "6  - VIEW SALES AND PURCHASE REPORT";
+echo "7  - GENERATE PIE GRAPH";
+echo "E  - EXIT";
 echo "----------------------------------------------------------------";
-echo "ENTER YOUR CHOICE::" | pv -qL 20;
+echo "ENTER YOUR CHOICE::" | pv -qL 10;
 read choice;
 case $choice in
 1) infor
