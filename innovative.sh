@@ -114,7 +114,7 @@ sim=` grep -c -i "$eno" shop.txt`
 if [ $sim -eq 0 ]
 then
 echo "$eno    $edesc     	$ecab       $erack            $ecost         $esales    	    $equant     	  $ecost1      $eprice" | cat >> shop.txt;
-echo "SAVING..........................."
+echo "SAVING..........................."|pv -qL 20;
 echo -n "◐\r"; sleep .3; echo -n "◓\r"; sleep .3; echo -n "◑\r"; sleep .3; echo -n "◒\r"; sleep .3;
 sleep 1
 echo "RECORD SAVED..............."
@@ -133,7 +133,7 @@ read eno;
 sim=` grep -c -i  "$eno" database.txt`
 if [ $sim -eq 0 ]
 then
-echo 'SEARCHING........\r'
+echo 'SEARCHING........\r'|pv -qL 20;
 echo -n "◐\r"; sleep .3; echo -n "◓\r"; sleep .3; echo -n "◑\r"; sleep .3; echo -n "◒\r"; sleep .3;
 sleep 2
 echo "ID    DESCRIPTION	CAB-NO  RACK_NUMBER  UNIT-COST SALES-PRICE QUANTITY TOTAL-COST TOTAL-PRICE:	 "
@@ -161,7 +161,7 @@ echo "THE PROVIDED PRODUCT ID DOES NOT EXIST IN DATABASE"
 else
 grep -v -i "$choice" shop.txt >second.txt
 mv second.txt shop.txt
-echo 'DELETING........\r'
+echo 'DELETING........\r'|pv -qL 20;
 echo -n "◐\r"; sleep .3; echo -n "◓\r"; sleep .3; echo -n "◑\r"; sleep .3; echo -n "◒\r"; sleep .3;
 sleep 2
 echo "DATA DELETED"
@@ -210,7 +210,7 @@ clear;
 }
 report()
 {
-echo "GENERATING REPORT...................."
+echo "GENERATING REPORT...................."|pv -qL 20;
 echo -n "◐\r"; sleep .3; echo -n "◓\r"; sleep .3; echo -n "◑\r"; sleep .3; echo -n "◒\r"; sleep .3; 
 sleep 2
 echo ""
@@ -228,23 +228,23 @@ stty echo -raw
 while [ 1 ]
 do
 echo ""
-echo "---------------------------------------------------------------"
-echo "*****************INVENTORY MANAGEMENT SYSTEM*******************";
-echo "---------------------------------------------------------------";
+echo "---------------------------------------------------------------" 
+echo "*****************INVENTORY MANAGEMENT SYSTEM*******************" ;
+echo "---------------------------------------------------------------" ;
 echo "$(date '+%D %T' | toilet -f term -F border --gay)";
 echo "-------------------------------";
 echo "-*-*-*-*-* MAIN MENU *-*-*-*-*- ";
 echo "-------------------------------";
-echo "1  - INFORMATION ABOUT PRODUCTS";
-echo "2  - ENTER PURCHASE RECORDS";
-echo "3  - UPDATE PURCHASED RECORDS";
-echo "4  - SEARCH FOR RECORDS";
-echo "5  - DELETE RECORDS FROM STORE DATABASE";
-echo "6  - VIEW SALES AND PURCHASE REPORT";
-echo "7  - GENERATE PIE GRAPH";
-echo "E  - EXIT";
+echo "1  - INFORMATION ABOUT PRODUCTS"| pv -qL 40;
+echo "2  - ENTER PURCHASE RECORDS"| pv -qL 40;
+echo "3  - UPDATE PURCHASED RECORDS"| pv -qL 40;
+echo "4  - SEARCH FOR RECORDS"| pv -qL 40;
+echo "5  - DELETE RECORDS FROM STORE DATABASE"| pv -qL 40;
+echo "6  - VIEW SALES AND PURCHASE REPORT"| pv -qL 40;
+echo "7  - GENERATE PIE GRAPH"| pv -qL 40;
+echo "E  - EXIT"| pv -qL 40;
 echo "----------------------------------------------------------------";
-echo "ENTER YOUR CHOICE::";
+echo "ENTER YOUR CHOICE::" | pv -qL 20;
 read choice;
 case $choice in
 1) infor
@@ -269,19 +269,18 @@ case $choice in
 E) echo "**************************************************************";
    echo "-----------------------CREATED BY:----------------------------";
    echo "**************************************************************";
-   echo " RAJ PATEL   ...........(14BCE093)";
-   echo " SARATH KAUL ...........(14BCE104)";
+   echo " RAJ PATEL   ...........(14BCE093)"|pv -qL 20;
+   echo " SARATH KAUL ...........(14BCE104)"|pv -qL 20;
    sleep 2;      
    exit;
    ;;
 e) echo "**************************************************************";
    echo "-----------------------CREATED BY:----------------------------";
    echo "**************************************************************";
-   echo " RAJ PATEL   ...........(14BCE093)";
-   echo " SARATH KAUL ...........(14BCE104)";
+   echo " RAJ PATEL   ...........(14BCE093)"|pv -qL 20;
+   echo " SARATH KAUL ...........(14BCE104)"|pv -qL 20;
    sleep 2;
    exit;
    ;;
 esac 
 done
-
